@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate Mapping DTD 3.0//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.learn.dao.Album" table="ALBUM"  >
+		<id name="id" type="int" unsaved-value="0">
+			<column name="ALBUM_ID"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="name" type="string">
+		<column name="NAME" length="15"></column>
+		</property>
+		
+		<set name="pictures" table="PICTURE" order-by="info">
+			<key column="PICTURE_ID" /> <!-- This ID is referred from Parent COlumn ID which is Album ID -->
+			<element type="string" column="INFO" />
+		</set>
+		
+	</class>
+</hibernate-mapping>
