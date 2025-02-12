@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate Mapping DTD 3.0//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping>
+ 	<subclass name="com.learn.inheritance.Customer" extends="com.learn.inheritance.Person" discriminator-value="CUST">
+ 		<property name="acctType">
+ 			<column name="ACCT_TYPE" length="10" />
+ 		</property>
+ 	</subclass>
+ 
+ </hibernate-mapping>
