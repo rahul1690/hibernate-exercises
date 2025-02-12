@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate Mapping DTD 3.0//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.learn.onetoone.Address" table="ADDRESS">
+		<id name="id" column="ID">
+		<generator class="foreign">
+			<param name="property">faculty</param>
+		</generator>
+		</id>
+		<property name="street" column="STREET" />
+		<property name="city" column="CITY" />
+	
+		<one-to-one name="faculty" class="com.learn.onetoone.Faculty" constrained="true"/>
+		
+	</class>
+</hibernate-mapping>
