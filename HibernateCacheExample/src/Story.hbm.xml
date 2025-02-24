@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate Mapping DTD 3.0//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.learn.onetomany.Story" table="STORY"  >
+		<id name="id">
+			<column name="ID"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="info" type="string">
+		<column name="INFO" length="15"></column>
+		</property>
+		
+		<many-to-one name="writer" class="com.learn.onetomany.Writer">
+			<column name="WRITER_ID"></column>
+		</many-to-one>
+		
+	</class>
+</hibernate-mapping>
